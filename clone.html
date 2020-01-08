@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {a:1,b:{obj:2},c:{ojbk:18},d:[1,2,3,[666,777,888]]};
+        // 使用递归实现深拷贝
+        const copy = (e) =>{
+            if(Array.isArray(e)){
+                var arr = [];
+                e.forEach(item=>{
+                    arr.push(copy(item))
+                })
+                return arr;
+            }else if(typeof e ==="object"){
+                var obj = {};
+                for (const k in e) {
+                    obj[k]=copy(e[k])   
+                }
+                return obj;
+            }
+            return e
+        }
+       var aaa =  copy(obj);
+       console.log(aaa,22);
+       aaa.d[2]=9;
+       console.log(obj);
+       
+
+         // const deepClone = (o)=>{
+        //     if(Array.isArray(o)){
+        //         var arr = [];
+        //         o.forEach(item=>{
+        //             arr.push(deepClone(item))
+        //         })
+        //         return arr;
+        //     } else if( typeof o ==="object"){
+        //         var oo = {};
+        //         for( const k in o){
+        //             oo[k] = deepClone(obj[k])
+        //         }
+        //         return oo;
+        //     }
+        //     return o
+        // }
+
+    </script>
+</body>
+</html>

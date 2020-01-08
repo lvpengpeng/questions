@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 拓展功能就是内置构造函数的prototype。里面的this就是调用这个函数的数组、字符串。
+    数组去重的最简单的方法就是使用Set，这是ES6的新的数据类型，就是不能有重复项的数组。 -->
+    <script>
+        Array.prototype.remove = function (){
+            return [...new Set(this)]
+        }
+        
+        var a = [1,2,3,3,3,4,4,5,[1,2,3],[1,2,3],1,6];
+        
+        console.log(a.remove(a));
+        
+    </script>
+</body>
+</html>

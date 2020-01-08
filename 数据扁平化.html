@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function flatten(arr){
+        var result = [];
+        arr.forEach(item => {
+            if(Array.isArray(item)){
+                result.push(...flatten(item));
+            }else{
+                result.push(item);
+            }
+        });
+        return result;
+    }
+
+    var arr = [[[{'city':'北京'},{'city':'上海'}],{'city':'徐州'}],{'city':'南京'}];
+
+    console.log(flatten(arr));
+    </script>
+    <script>
+
+//     扩展运算符
+// es6的扩展运算符能将二维数组变为一维
+
+[].concat(...[1, 2, 3, [4, 5]]);  // [1, 2, 3, 4, 5]
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 方法1
+    let arr =[];
+    let obj ={};
+    
+    console.log(Array.isArray(arr));
+    
+    // 方案2
+    console.log(Object.prototype.toString.call(arr) == "[object Array]" );
+    
+    // 方案3 【鸭式辩型】 抄写蓝色字，一个东西走路摇摆、嘎嘎叫、能游泳就是鸭子。从能力判断一个东西是一个东西。
+    console.log("push" in arr && "join" in arr && arr.hasOwnProperty('length'));
+    
+    </script>
+</body>
+</html>

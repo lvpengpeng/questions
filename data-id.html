@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div data-id="999"></div>
+    <script>
+        // 获取属性值
+        var div = document.querySelector('div').getAttribute("data-id");
+        console.log(div);
+        // 设置属性值
+        document.querySelector('div').setAttribute("data-id","666") ;
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+
+79.得到下面盒子的 data-id 属性值：
+<div data-id=”999”></div>
+
+加个id=box
+document.querySelector("#box").getAttribute('data-id'); -->

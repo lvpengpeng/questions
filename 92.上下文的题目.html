@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var bar = 0;
+        var obj = {
+            bar:1,
+            foo(){
+                console.log(this.bar);
+            }
+        }
+        
+        var obj2 = {
+            bar :2,
+            foo:obj.foo
+        }
+        
+        var obj3 = {
+            bar :3,
+            foo(){
+                return obj.foo
+            }
+        }
+        var template = obj2.foo;
+        obj.foo(); //1
+        obj2.foo();//2
+        ;//1 
+        var aa= obj3.foo();
+        console.log(aa());
+        
+        template();//0
+    </script>
+</body>
+</html>

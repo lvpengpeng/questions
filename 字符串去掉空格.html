@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 正则表达式\s   表示空格
+        let sey="  字符        串去  掉 空格   ";
+        console.log(sey);
+        let a = sey.replace(/\s+/g,"");
+        // 或者 let a = sey.replace(/ /g,"");
+        console.log(a);
+        // 或者es6 trim(),但是只可以去掉首位空格
+        
+        var str = "       Runoob  ABC      ";
+        console.log(1,str.trim()); //Runoob  ABC
+        
+    </script>
+</body>
+</html>

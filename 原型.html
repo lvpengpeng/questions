@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!-- 每一个对象都有原型，有原型链查找的功能：原型上定义的属性和方法，自己能够打点调用。
+构造函数的prototype将成为它new出来的实例的原型。（三角关系，给面试官画图，“我能给你画一下图么？”）
+原型的功能就是把所有类的函数（方法）写到原型prototype上，这样的话，节约内存，所有实例共用函数。 -->
+</body>
+
+<script>
+// 可以直接用__proto__改原型
+// var obj = {
+// 	m: 444
+// };
+
+// var o = {
+
+// };
+
+// o.__proto__ = obj;
+// // o.m =9;
+// console.log(obj);
+// console.log(o.m);
+</script>
+<script>
+    // 构造器设置原型：
+    function A(){
+    
+    }
+    A.prototype.mm = 6666;
+    
+    var aaa = new A();
+    
+    console.log(aaa.mm);
+    
+    // Object.create();
+    var ooo = {
+        m: 444
+    };
+    
+    var o = Object.create(ooo);		// 以ooo为原型创建东西
+    
+    console.log(o.__proto__ === ooo,111);			//true
+    console.log(o.m);
+</script>
+</html>

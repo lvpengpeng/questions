@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        64.Vue 和 React 开发中如何使用全局状态常量？你都用这个状态常量做什么事情？
+        比如最常见的全局状态常量就是process.env.NODE_ENV
+        它的值可能是：production、development
+        就是webpack.config.js中的mode。
+        {
+            mode: "",
+            entry: {
+            },
+            output: {
+            }
+        }
+
+        比如现在是开发模式，我就显示一个某某功能按钮。
+        <button v-if="process.env.NODE_ENV === 'develpment'">
+            测试按钮
+        </button>
+        npm run serve 的时候看的见这个按钮
+        npm run build 的时候看不见这个按钮
+
+        process.env.NODE_ENV 不是天生能用的，而是需要配置。
+
+        还有读取版本号：process.env.NODE_VERSION
+
+-->
+</body>
+</html>

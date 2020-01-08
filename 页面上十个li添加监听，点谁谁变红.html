@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<style>
+li{
+    width: 100px;
+    height: 40px;
+    background: #ccc;
+    margin: 10px;
+}
+</style>
+<body>
+    <!-- <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul> -->
+    <script>
+    // 方法一：为每一个li添加事件，批量添加监听。
+    // var li =document.getElementsByTagName('li');
+    //     for(var i=0; i<li.length;i++){
+    //         li[i].onclick = function(){
+    //             console.log(i);
+    //             this.style.background='red';
+    //         }
+    //     }
+
+    // 方法二：使用事件委托，给ui
+
+    // var ul = document.getElementsByTagName('ul')[0];
+    // ul.onclick=function(e){
+    //     console.log(e,e.target);
+    //     e.target.style.background='red';
+    // }
+
+
+    // 方法三：使用jq on
+    // 事件委托 on和delegate的适用区别 jquery
+    // $('ul').on('click','li',function(){
+    //     $(this).css("background", "red");
+    // })
+        //     使用这两个事件的时候大家会在使用选择器selector和事件类型type会经常出错，因为传参顺序不同，当看看源码就会明白，其实jquery在使用事件绑定delegate和on在这两个地方做了区分
+
+        // 使用delegate的时候应该是$("div").delegate(selector,type,fn);
+
+        // 使用on的时候应该是$("div").on(type,selector,fn);
+    </script>
+
+    <script>
+
+    // 题目问“事件委托”是啥，直接用这个案例当做比喻。“比如有10个li添加监听”。
+    // “事件委托”两种情况使用：大量元素添加、动态上树的。
+    // 比如这个，1秒创建一个按钮，就要用事件委托：
+    // 给未来元素添加事件
+    
+    setInterval(function(){
+		var btn = document.createElement('button');
+		btn.innerHTML = '按我';
+		document.body.appendChild(btn);
+	}, 1000);
+
+	document.body.onclick = function(e){
+		if(e.target.nodeName.toLowerCase() === 'button'){
+			e.target.style.background = 'red';
+		}
+	}
+    </script>
+</body>
+</html>

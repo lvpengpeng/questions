@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // var dom = function(){
+    //     var Name = "Default";
+    //     this.Sex = "Boy";
+    //     this.success = function(){
+    //         alert("Success");
+    //     };
+    // };
+    // console.log(dom,"--------");
+    
+    // alert(dom.Name);
+    // alert(dom.Sex);
+    </script>
+    <script>
+// var html = {
+//         Name:'Object',
+//         Success:function(){
+//             this.Say = function(){
+//                     alert("Hello,world2");
+//             };
+//             alert("Obj Success1");
+//         }
+//     };
+//     console.log(html.Name);
+//     console.log(html.Success());
+    </script>
+    <script>
+        // function Person(){    
+        // var name = "default";       
+        //     return {    
+        //         getName : function(){    
+        //             return name;    
+        //         },    
+        //         setName : function(newName){    
+        //             name = newName;    
+        //         }    
+        //     }    
+        // };   
+
+        // var p = new Person();
+        // p.setName("Tom");
+        // alert(p.getName()); //Tom
+
+        // var Jack = function(){};
+        // //继承自Person
+        // Jack.prototype = new Person();
+        // //添加私有方法
+        // Jack.prototype.Say = function(){
+        //     alert("Hello,my name is Jack");
+        // };
+        // var j = new Jack();
+        // j.setName("Jack");
+        // j.Say(); //Hello,my name is Jack
+        // alert(j.getName()); //Jack
+    </script>
+    <script>
+        var abc= function (){
+            var a = 10;
+            return {
+                add(){
+                    a ++;
+                },
+                minus(){
+                    a--;
+                },
+                getA(){
+                    return a;
+                }
+            }
+        }
+        console.log( abc().add());
+        
+        // abc.add()
+        // abc.add()
+        // abc.add()
+        // console.log(abc.getA());
+    </script>
+</body>
+</html>

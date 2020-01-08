@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // //sort 排序
+        // let arr1 = [-1,2,3,1,23,223,4,-44,32];
+        // console.log(arr1.sort((a,b)=> a-b));
+    </script>
+    <script>
+        // // 冒泡排序
+        // // 外面for循环，i=0；i小于长度减1。
+        // // 里面for循环j=0，j小于长度减1再减i。
+        // // 最里面循环if做判断。 然后数组解构赋值做交换。
+
+        // //小到大
+        // let arr = [-1,2,3,1,23,223,4,-44,33];
+        // for(var i=0;i<arr.length-1;i++){
+        //     for(var j=0;j<arr.length-1-i;j++){
+        //         // 小到大
+        //         // if(arr1[i]<arr[i+1]){
+        //         //     [arr[i + 1],arr[i]] = [arr[i],arr[i + 1]]
+        //         // }
+
+        //         // 大到小
+        //         if(arr[i]<arr[i+1]){
+        //             [arr[i + 1],arr[i]] = [arr[i],arr[i + 1]]
+        //         }
+        //     }
+        // }
+        // console.log(arr,"sort");
+    </script>
+
+    <script>
+
+    // // 从数列中挑出一个元素，称为"基准"（pivot），
+    // // 重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区结束之后，该基准就处于数列的中间位置。这个称为分区（partition）操作。
+    // // 递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。
+    //     let arr2 = [-1,2,3,1,23,223,4,-44,33];
+    // // ③ 快速（二分）
+    //     function quick(arr){
+    //         if(arr.length <= 1){
+    //             return arr;
+    //         }
+    //         var big = [];
+    //         var small = [];
+    //         var pivot = arr[0];
+    //         for(let i = 1 ; i < arr.length ; i++){
+    //             if(arr[i] > pivot){
+    //                 big.push(arr[i]);
+    //             }else{
+    //                 small.push(arr[i]);
+    //             }
+    //         }
+    //         return [...quick(small), pivot, ...quick(big)];
+    //     }
+
+    //     console.log(quick(arr2),"quick(arr)");
+        // 口诀：quick 函数先判断数组长度，小于等于1直接return。
+        // 定义3个变量，max 空数组， min空数组， 和pivot 原数组的第一项。
+        // 从i=1开始，循环原来数组，if当arr[i]大于pivot就arr[i]就push到最大的空数组。不然反之。
+        // 最后return 返回 这个数组[...quick(min),pivot,...quick(max)],然后递归排序里面的新数组。
+    </script>
+
+    <script>
+        let  arrs=[23,44,324,242,4,1,-3,432-243,5,3];
+        function quick(arr){
+            if(arr.length<=1){
+                return arr;
+            } 
+            var big = [];
+           var small = [];
+            var pivot = arr[0];
+            // for(let i=1;i<arr.length;i++){
+            //     if(arr[i]>pivot){
+            //         big.push(arr[i])
+            //     }else{
+            //         small.push(arr[i])
+            //     }
+            // }
+
+                        for(let i = 1 ; i < arr.length ; i++){
+                if(arr[i] > pivot){
+                    big.push(arr[i]);
+                }else{
+                    small.push(arr[i]);
+                }
+            }
+
+            return [...quick(small), pivot, ...quick(big)];
+        }
+         console.log(quick(arrs));
+    </script>
+</body>
+</html>

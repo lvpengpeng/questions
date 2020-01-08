@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    6.如何实现继承？
+方法①：
+子类的prototype，等于超类的实例
+Student.prototype = new People();
+画图：
+
+方法②： 
+ES6中的extends
+		class Student extends People{
+		}
+机理没有变化，等于说还是原型的感觉。
+
+方法3：
+临时让一个东西继承，var o = Object.create(new People());
+
+啥是继承：
+</body>
+</html>

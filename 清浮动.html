@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    /* 83.如何清除浮动？clearfix 是什么？
+清除浮动：浮动的元素不能撑起来父亲。除非父亲是BFC。
+清除浮动：overflow:hidden、加高度、clear:both */
+		.clearfix::after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+        /* 83.如何清除浮动？clearfix 是什么？
+        清除浮动：浮动的元素不能撑起来父亲。除非父亲是BFC。
+        清除浮动：overflow:hidden、加高度、clear:both
+		.clearfix::after{
+			content:"";
+			clear:both;
+			display: block;
+		} */
+    </style>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Fun (){
+            this.a= 0;
+            this.showa = function(){
+                alert(this.a)
+            }
+            this.showb = function(){
+                alert(this.a)
+            }
+        }
+        Fun.prototype.showa = function(){
+            this.a= 3;
+            alert(this.a)
+        }
+        Fun.prototype.showc = function(){
+            this.a= 4;
+            alert(this.a)
+        }
+        var fun = new Fun(); 
+        fun.showa();
+        fun.showc();
+    </script>
+</body>
+</html>

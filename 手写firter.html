@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Array.prototype.guolv = function(fn){
+            var arr = [];
+            for(let i = 0 ; i < this.length ; i++){
+                if(fn(this[i])){
+                    arr.push(this[i]);
+                } 
+            }
+            return arr;
+        }
+
+        var arr = [23,34,3,5,23,123,32,453,4534,33,3444,55];
+
+        console.log(arr.guolv(item => item % 2 == 0));
+    </script>
+</body>
+</html>

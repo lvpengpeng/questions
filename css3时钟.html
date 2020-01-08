@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    setInterval(function(){
+        var time = new Date();
+        var h = time.getHours() % 12;
+        var m = time.getMinutes();
+        var s = time.getSeconds();
+        // console.log(h, m, s);
+
+        document.getElementById("miaozhen").style.transform = 'rotate(' + s * 6 + 'deg)';
+        document.getElementById("fenzhen").style.transform = 'rotate(' +( m * 6 + s * 0.1) + 'deg)';
+        document.getElementById("shizhen").style.transform = 'rotate(' +( h * 30 + m * 6 / 3600) + 'deg)';
+    }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+cookie是解决浏览器识别问题的，服务器会在HTTP的响应头部设置Set-Cookie字段，
+浏览器今后每一次都会在HTTP请求头部带着cookie上去。cookie曾经充当过本地存储
+，比如我们公司之前做了一个换肤效果，就是用cookie存储的。cookie不安全，容易修改，存储量小。
+
+session利用了cookie，不发明文了，而是密文，服务器做信息缓存，更安全。
+
+localStorage、sessionStorage是HTML5新增的本地存储。
+
+token是利用用户特征（IP地址）进行的MD5校验码。

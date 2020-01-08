@@ -1,0 +1,41 @@
+<!-- 51.什么是函数柯里化？编写函数，将函数柯里化
+函数柯理化：函数参数变得智能化，函数参数如果传的不够，则返回接收另外参数的函数。
+等够了，就执行。
+计算长方体的体积，a、b、h 少一个不行。
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// tiji(10, 20)(15)
+		// tiji(10)(20)(15)
+
+		function tiji(a, b, h){
+			return a * b * h;
+		}
+
+		function curry(fn){
+			return function(){
+				var arg1 = arguments;
+				return function(){
+					var arg2 = arguments;
+					return fn(...arg1, ...arg2);
+				}
+			}
+		}
+
+		tiji = curry(tiji);
+
+		var jieguo = tiji(10)(20,30);
+		console.log(jieguo)
+	</script>
+</body>
+</html>

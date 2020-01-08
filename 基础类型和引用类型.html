@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- js中的基础类型有String，Number，undefind，null，Boolean 。保存在栈内存中-->
+    <!-- js中的引用类型有Functio，Object，RegExp，Array 。保存在堆内存中 -->
+    <script>
+        // 按值访问，可操作保存在变量中的实际的值。基本类型值指的是简单的数据段。。
+        // var a= 1;
+        // b=a;
+        // a++;
+        // console.log(a,b); //2,1
+    </script>
+    <script>
+        // var obj = {a:1,b:2};
+        // var obj1 = obj;
+        // obj1.a=3;
+        // console.log(obj1,obj);
+
+        // {a: 3, b: 2} {a: 3, b: 2}
+        
+        // 或者
+        // var arr = [1,2,3];
+        // var arr1= arr;
+        // arr1.push(5)
+        // console.log(arr,arr1);
+        // [1, 2, 3, 5]  [1, 2, 3, 5]
+
+
+        // 所以说引用类型(对象或者数组）都不能用=号复制。要进拷贝
+    </script>
+    <script>
+        //浅拷贝，只是拷贝表面的一层 如果对象的某一项还是引用类型的话，则是引用类型;
+        // var obj = {a:1,b:2,c:2,d:[1,2,3,4]};
+        // var obj1 = {...obj};
+        // obj1.b= 9;
+        // obj1.d.push(5);
+        // console.log(obj,obj1);
+        // {a:1,b:2,c:2,d:[1,2,3,4,5]}; {a:1,b:9,c:2,d:[1,2,3,4,5]};
+    </script>
+    <script>
+        //浅拷贝，只是拷贝表面的一层 ...obj
+        // var obj = {a:1,b:2};
+        // obj1 = {...obj};
+        // obj1.a=3;
+        // console.log(obj1,obj); 
+    </script>
+    <script>
+        //浅拷贝，只是拷贝表面的一层 var obj1 = Object.assign({},obj)
+        // var obj = {c:1,d:2};
+        // var obj1 = Object.assign({},obj);
+        // obj1.c=3;
+        // console.log(obj,obj1);
+        // {c: 1, d: 2} {c: 3, d: 2}
+    </script>
+    <script>
+        //浅拷贝，只是拷贝表面的一层 ...arr
+        // var arr = [1,2,3];
+        // var arr1 = [...arr]
+        // arr1.push(4);
+        // console.log(arr,arr1);
+        // [1, 2, 3]  [1, 2, 3, 4]
+    </script>
+
+    <script>
+        // 深拷贝，使用for in循环和递归
+        // 深克隆，需要递归：
+        // const deepclone = (o) => {
+        //     if(Array.isArray(o)){
+        //         var arr = [];
+        //         o.forEach(item => {
+        //             arr.push(deepclone(item));
+        //         });
+        //         return arr;
+        //     }else if(typeof o === "object"){
+        //         var oo = {};
+        //         for(var k in obj){
+        //             oo[k] = deepclone(obj[k]);
+        //         }
+        //         return oo;
+        //     }
+        //     return o;
+        // }
+        // var obj = {a:1,b:2,c:2,d:[1,2,3,4]}
+        // var obj1 = deepclone(obj);
+        // obj.d.push(5);
+        // console.log(obj,obj1);
+        // {a:1,b:2,c:2,d:[1,2,3,4,5]} {a:1,b:2,c:2,d:[1,2,3,4]}
+    </script>
+    <script>
+        // 自己写深拷贝
+        // var obj = {a:1,b:2,c:2,d:[1,2,3,4]};
+        
+        // const deepClone = (o)=>{
+        //     if(Array.isArray(o)){
+        //         var arr = [];
+        //         o.forEach(item=>{
+        //             arr.push(deepClone(item))
+        //         })
+        //         return arr;
+        //     } else if( typeof o ==="object"){
+        //         var oo = {};
+        //         for( const k in o){
+        //             oo[k] = deepClone(obj[k])
+        //         }
+        //         return oo;
+        //     }
+        //     return o
+        // }
+    </script>
+<!-- 定义箭头函数，传递参数，判断数组，定义空数组，循环参数的数组， push 递归函数，return空数组
+判断对象，定义空对象，循环参数对象，给新的对象，返回对象。 非数组和非对象就直接返回参数。 -->
+    <script>
+        var obj = {
+            name:"aaa",
+            age:{
+                is:19
+            }
+        }
+        var obj1 = {...obj} ;
+        obj.name="lvp";
+        obj.age.is=33
+        console.log(obj1,333333,obj);
+        
+    </script>
+
+
+</body>
+</html>

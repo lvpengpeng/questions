@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+    
+    function Obj(){
+        this.a=[]; //实例变量
+        this.fn=function(){ //实例方法    
+        }
+    }
+    
+    console.log(typeof Obj.a); //undefined
+    console.log(typeof Obj.fn); //undefined
+    
+    var o=new Obj();
+    console.log(typeof o.a); //object
+    console.log(typeof o.fn); //function
+
+    </script>
+
+    <script>
+    function f1(){};
+    var f2 = function(){};
+    var f3 = new Function('str','console.log(str)');
+    
+    var o3 = new f1();
+    var o1 = {};
+    var o2 =new Object();
+    console.log(11);
+    
+console.log(f1.prototype);
+console.log(f2.prototype);
+console.log(f3.prototype);
+console.log(o3._proto_);
+console.log(o1._proto_);
+console.log(o2._proto_); -->
+    <!-- </script> -->
+
+    <script>
+    
+    // function f1(){};
+    // console.log(f1.prototype) //f1{}
+    // console.log(typeof f1.prototype) //Object
+    // console.log(typeof Function.prototype) // Function，这个特殊
+    // console.log(typeof Object.prototype) // Object
+    // console.log(typeof Function.prototype.prototype) //undefined
+ 
+    </script>
+
+
+<script>
+ function foo() {
+    this.add = function (x, y) {
+        return x + y;
+    }
+}
+ 
+foo.prototype.add = function (x, y) {
+    return x + y + 10;
+}
+ 
+Object.prototype.subtract = function (x, y) {
+    return x - y;
+}
+ 
+var f = new foo();
+console.log(f.add);
+
+// alert(f.add(1, 2)); //结果是3，而不是13
+
+</script>
+<script>
+function Foo() {}
+Foo.prototype = 1; // 无效
+// console.log(Foo);
+
+</script>
+
+
+<script>
+// 构造函数.prototype = 原型对象
+// 原型对象.constructor = 构造函数(模板)
+// 原型对象.isPrototypeof(实例对象) 判断实例对象的原型 是不是当前对象
+</script>
+</body>
+</html>
